@@ -1,1728 +1,375 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Acom Lilian - Junior Full Stack Developer and AI Engineer from Uganda."
-    >
-
-    <meta
-        name="keywords"
-        content="Acom Lilian, Full Stack Developer, Software Engineer, AI Engineer, Uganda, JavaScript, Node.js, MongoDB, Vue.js"
-    >
-
-    <meta name="author" content="Acom Lilian">
-
-    <title>Acom Lilian | Full Stack Developer & AI Engineer</title>
-
-    <!-- Tailwind CSS Play CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
-
+    <title>Lilian Acom — Full-Stack & Agentic AI Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#0a0a0a',
+                            900: '#121212',
+                            800: '#1a1a1a',
+                            700: '#262626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            --accent: #34d399;
-            --accent-dark: #10b981;
-            --teal: #2dd4bf;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(16, 185, 129, 0.08),
-                    transparent 35%
-                ),
-                #020617;
-        }
-
-        .mono-font {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .gradient-text {
-            background: linear-gradient(
-                90deg,
-                #34d399,
-                #2dd4bf,
-                #22d3ee
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .gradient-border {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gradient-border::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            padding: 1px;
-            border-radius: inherit;
-
-            background: linear-gradient(
-                135deg,
-                rgba(52, 211, 153, 0.7),
-                rgba(45, 212, 191, 0.2),
-                rgba(34, 211, 238, 0.5)
-            );
-
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            background-image:
-                linear-gradient(
-                    rgba(148, 163, 184, 0.035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(148, 163, 184, 0.035) 1px,
-                    transparent 1px
-                );
-
-            background-size: 45px 45px;
-        }
-
-        .glow {
-            box-shadow:
-                0 0 50px rgba(16, 185, 129, 0.08);
-        }
-
-        .project-card {
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(52, 211, 153, 0.35);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-        }
-
-        .skill-card {
-            transition:
-                transform 0.3s ease,
-                background 0.3s ease,
-                border-color 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            background: rgba(15, 23, 42, 0.85);
-            border-color: rgba(52, 211, 153, 0.3);
-        }
-
-        .section-line {
-            height: 1px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(52, 211, 153, 0.7),
-                rgba(45, 212, 191, 0.4),
-                transparent
-            );
-        }
-
-        .typing-cursor {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% {
-                opacity: 1;
-            }
-
-            51%, 100% {
-                opacity: 0;
-            }
-        }
-
-        .float-animation {
-            animation: floating 5s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        .fade-up {
-            animation: fadeUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile menu */
-        #mobileMenu {
-            display: none;
-        }
-
-        #mobileMenu.active {
-            display: block;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 999px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #10b981;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ededed;
         }
     </style>
 </head>
+<body class="min-h-screen selection:bg-neutral-800 selection:text-white">
 
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-neutral-800/60">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-white tracking-tight flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Lilian Acom
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="https://github.com/acomlilian2000-star" target="_blank" rel="noopener noreferrer" class="p-2 text-neutral-400 hover:text-white bg-dark-900 border border-neutral-800 rounded-lg transition-colors">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                <a href="mailto:acomlilian2000@gmail.com" class="text-xs font-medium bg-white text-neutral-950 px-3.5 py-2 rounded-lg hover:bg-neutral-200 transition-colors">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
 
-<body class="text-slate-300 antialiased">
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-28">
 
-<!-- ========================================================= -->
-<!-- NAVIGATION -->
-<!-- ========================================================= -->
+        <!-- Hero Section -->
+        <section id="about" class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900 border border-neutral-800 text-xs text-neutral-400">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-400"></i>
+                Full-Stack & Agentic AI Engineer
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+                Building robust web systems & intelligent AI workflows.
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+                Hi, I'm Lilian Acom. Software engineer based in Kampala, Uganda, specializing in full-stack web architecture, agentic AI integration, and embedded systems prototyping.
+            </p>
+            
+            <!-- Tech Skills Badges -->
+            <div class="flex flex-wrap gap-2 pt-2">
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-200">Next.js</span>
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-200">TypeScript</span>
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-200">Python</span>
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-400">Node.js / Express</span>
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-400">React & Vue 3</span>
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-400">LangChain & LLMs</span>
+                <span class="text-xs font-medium px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-400">MongoDB / PostgreSQL</span>
+            </div>
+        </section>
 
-<header
-    class="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/70 bg-slate-950/85 backdrop-blur-xl"
->
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-        <div class="h-20 flex items-center justify-between">
-
-            <!-- Logo -->
-            <a href="#home" class="flex items-center gap-3">
-
-                <div
-                    class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center"
-                >
-                    <span class="mono-font text-emerald-400 font-bold">
-                        LA
-                    </span>
-                </div>
-
+        <!-- Projects Section -->
+        <section id="projects" class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-800/80 pb-4">
                 <div>
-                    <p class="text-sm font-bold text-white">
-                        Acom Lilian
-                    </p>
-
-                    <p class="mono-font text-[10px] text-emerald-400">
-                        software.engineer
-                    </p>
+                    <h2 class="text-2xl font-bold text-white tracking-tight">Featured Projects</h2>
+                    <p class="text-sm text-neutral-400 mt-1">Enterprise systems, open-source AI tools, and production applications.</p>
                 </div>
-
-            </a>
-
-
-            <!-- Desktop Navigation -->
-
-            <nav class="hidden md:flex items-center gap-8">
-
-                <a
-                    href="#about"
-                    class="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-emerald-400 transition"
-                >
-                    About
-                </a>
-
-                <a
-                    href="#skills"
-                    class="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-emerald-400 transition"
-                >
-                    Skills
-                </a>
-
-                <a
-                    href="#projects"
-                    class="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-emerald-400 transition"
-                >
-                    Projects
-                </a>
-
-                <a
-                    href="#education"
-                    class="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-emerald-400 transition"
-                >
-                    Education
-                </a>
-
-                <a
-                    href="#contact"
-                    class="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-emerald-400 transition"
-                >
-                    Contact
-                </a>
-
-            </nav>
-
-
-            <!-- Desktop CTA -->
-
-            <a
-                href="mailto:acomlilian2000@gmail.com"
-                class="hidden sm:inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-emerald-500 text-slate-950 px-4 py-2.5 rounded-lg hover:bg-emerald-400 transition"
-            >
-                <i class="fa-solid fa-paper-plane"></i>
-                Let's Talk
-            </a>
-
-
-            <!-- Mobile Button -->
-
-            <button
-                id="menuButton"
-                class="md:hidden text-slate-300 text-xl"
-                aria-label="Open menu"
-            >
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-        </div>
-
-
-        <!-- Mobile Menu -->
-
-        <div id="mobileMenu" class="pb-5">
-
-            <nav class="flex flex-col gap-4 pt-3">
-
-                <a href="#about" class="mobile-link text-sm text-slate-300">
-                    About
-                </a>
-
-                <a href="#skills" class="mobile-link text-sm text-slate-300">
-                    Skills
-                </a>
-
-                <a href="#projects" class="mobile-link text-sm text-slate-300">
-                    Projects
-                </a>
-
-                <a href="#education" class="mobile-link text-sm text-slate-300">
-                    Education
-                </a>
-
-                <a href="#contact" class="mobile-link text-sm text-slate-300">
-                    Contact
-                </a>
-
-            </nav>
-
-        </div>
-    </div>
-</header>
-
-
-<!-- ========================================================= -->
-<!-- HERO -->
-<!-- ========================================================= -->
-
-<main id="home">
-
-<section
-    class="hero-grid min-h-screen flex items-center pt-28 pb-16"
->
-
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 w-full">
-
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-
-
-            <!-- LEFT SIDE -->
-
-            <div class="lg:col-span-7 fade-up">
-
-                <!-- Status -->
-
-                <div class="flex items-center gap-2 mb-7">
-
-                    <span
-                        class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
-                    ></span>
-
-                    <span
-                        class="mono-font text-xs text-emerald-400"
-                    >
-                        AVAILABLE FOR OPPORTUNITIES
-                    </span>
-
+                <!-- Filters -->
+                <div class="flex items-center gap-2 text-xs">
+                    <button onclick="filterProjects('all')" class="filter-btn px-3 py-1.5 rounded-md bg-white text-neutral-950 font-medium transition-colors">All</button>
+                    <button onclick="filterProjects('ai')" class="filter-btn px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-400 hover:text-white transition-colors">AI & Agents</button>
+                    <button onclick="filterProjects('fullstack')" class="filter-btn px-3 py-1.5 rounded-md bg-dark-900 border border-neutral-800 text-neutral-400 hover:text-white transition-colors">Full-Stack</button>
                 </div>
+            </div>
 
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="project-grid">
 
-                <!-- Profile -->
-
-                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-7">
-
-                    <div class="relative">
-
-                        <div
-                            class="absolute -inset-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 blur opacity-40"
-                        ></div>
-
-                        <!-- Put your real photo here -->
-                        <img
-                            src="assets/lilian.jpg"
-                            alt="Acom Lilian"
-                            class="relative w-28 h-28 rounded-full object-cover border-4 border-slate-950 shadow-xl"
-                        >
-
-                    </div>
-
-
+                <!-- 1. Nyondo General Hardware -->
+                <div class="project-card bg-dark-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-all" data-category="fullstack">
                     <div>
-
-                        <span
-                            class="inline-block text-[10px] font-bold tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20 mb-2"
-                        >
-                            Uganda • Remote Friendly
-                        </span>
-
-                        <h1
-                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight"
-                        >
-                            Acom
-                            <span class="gradient-text">
-                                Lilian
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-dark-800 text-neutral-300 border border-neutral-700/50">Full-Stack Enterprise</span>
+                            <span class="flex items-center gap-1.5 text-xs text-amber-400/90 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">
+                                <i data-lucide="lock" class="w-3 h-3"></i> Private Repo
                             </span>
-                        </h1>
-
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">NYONDO General Hardware Management</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                            Custom web-based inventory, sales, and supplier credit management system built to handle commercial hardware enterprise logistics and record-keeping.
+                        </p>
                     </div>
-
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">TypeScript</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Next.js</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Node.js</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">MongoDB</span>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-white bg-dark-800 hover:bg-dark-700 border border-neutral-700 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Website
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-
-                <!-- Title -->
-
-                <h2
-                    class="text-xl sm:text-2xl font-semibold text-slate-200 mb-5"
-                >
-                    Junior Full Stack Developer
-                    <span class="text-emerald-400">&</span>
-                    AI Engineer
-                </h2>
-
-
-                <!-- Intro -->
-
-                <p
-                    class="max-w-2xl text-slate-400 leading-8 text-sm sm:text-base mb-8"
-                >
-                    I build practical digital solutions that connect
-                    modern web applications, backend systems, databases
-                    and artificial intelligence. My goal is to create
-                    technology that solves real-world problems and makes
-                    everyday work more efficient.
-                </p>
-
-
-                <!-- Buttons -->
-
-                <div class="flex flex-wrap gap-4 mb-9">
-
-                    <a
-                        href="#projects"
-                        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-emerald-500 text-slate-950 text-sm font-bold hover:bg-emerald-400 transition"
-                    >
-                        View My Projects
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-
-                    <a
-                        href="assets/Acom-Lilian-CV.pdf"
-                        download
-                        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-200 text-sm font-bold hover:border-emerald-500/50 hover:text-emerald-400 transition"
-                    >
-                        <i class="fa-solid fa-download"></i>
-                        Download CV
-                    </a>
-
-                </div>
-
-
-                <!-- Social Links -->
-
-                <div class="flex items-center gap-5">
-
-                    <a
-                        href="https://github.com/acomlilian2000-star/Nyondo-General-Hardware-Ltd"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-slate-500 hover:text-white transition"
-                        aria-label="GitHub"
-                    >
-                        <i class="fa-brands fa-github text-xl"></i>
-                    </a>
-
-
-                    <!-- Replace this URL with your actual LinkedIn profile -->
-                    <a
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-slate-500 hover:text-blue-400 transition"
-                        aria-label="LinkedIn"
-                    >
-                        <i class="fa-brands fa-linkedin text-xl"></i>
-                    </a>
-
-
-                    <a
-                        href="mailto:acomlilian2000@gmail.com"
-                        class="text-slate-500 hover:text-emerald-400 transition"
-                        aria-label="Email"
-                    >
-                        <i class="fa-solid fa-envelope text-xl"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TERMINAL -->
-
-            <div class="lg:col-span-5 float-animation">
-
-                <div
-                    class="gradient-border bg-slate-900/60 rounded-2xl p-[1px] glow"
-                >
-
-                    <div
-                        class="bg-slate-950/90 rounded-2xl overflow-hidden"
-                    >
-
-                        <!-- Terminal Header -->
-
-                        <div
-                            class="px-5 py-4 border-b border-slate-800 flex items-center justify-between"
-                        >
-
-                            <div class="flex gap-2">
-
-                                <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500/70"></span>
-
-                            </div>
-
-                            <span
-                                class="mono-font text-[10px] text-slate-600"
-                            >
-                                lilian@developer:~
+                <!-- 2. LiaComPrep AI -->
+                <div class="project-card bg-dark-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-all" data-category="ai">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-dark-800 text-neutral-300 border border-neutral-700/50">Agentic AI & Voice</span>
+                            <span class="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded border border-emerald-400/20">
+                                <i data-lucide="globe" class="w-3 h-3"></i> Public Repo
                             </span>
-
                         </div>
-
-
-                        <!-- Terminal Body -->
-
-                        <div class="p-6 mono-font text-xs sm:text-sm">
-
-                            <p class="text-slate-600 mb-5">
-                                // developer.profile
-                            </p>
-
-                            <p class="mb-4">
-                                <span class="text-emerald-400">$</span>
-                                whoami
-                            </p>
-
-                            <p class="text-slate-300 mb-6">
-                                Acom Lilian
-                            </p>
-
-
-                            <p class="mb-4">
-                                <span class="text-emerald-400">$</span>
-                                stack --show
-                            </p>
-
-                            <div class="space-y-2 text-slate-400 mb-6">
-
-                                <p>
-                                    <span class="text-emerald-400">✓</span>
-                                    JavaScript / Node.js
-                                </p>
-
-                                <p>
-                                    <span class="text-emerald-400">✓</span>
-                                    Express.js / REST APIs
-                                </p>
-
-                                <p>
-                                    <span class="text-emerald-400">✓</span>
-                                    MongoDB / Mongoose
-                                </p>
-
-                                <p>
-                                    <span class="text-emerald-400">✓</span>
-                                    Vue.js / HTML / CSS
-                                </p>
-
-                                <p>
-                                    <span class="text-emerald-400">✓</span>
-                                    Python / AI Applications
-                                </p>
-
-                                <p>
-                                    <span class="text-emerald-400">✓</span>
-                                    Git / GitHub / Linux
-                                </p>
-
-                            </div>
-
-
-                            <p>
-                                <span class="text-emerald-400">$</span>
-                                status
-                            </p>
-
-                            <p class="text-emerald-400 mt-2">
-                                Building useful technology
-                                <span class="typing-cursor">_</span>
-                            </p>
-
+                        <h3 class="text-xl font-bold text-white mb-2">LiaComPrep AI (PrepPulse)</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                            Interactive mock interviewer platform featuring OpenRouter LLM orchestration, gTTS voice synthesis, Whisper audio transcription, and prompt injection defense.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Python</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Streamlit</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">OpenRouter</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Whisper / gTTS</span>
                         </div>
-
+                        <div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-white bg-dark-800 hover:bg-dark-700 border border-neutral-700 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live App
+                            </a>
+                            <a href="https://github.com/acomlilian2000-star" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-neutral-400 hover:text-white bg-dark-950 hover:bg-dark-900 border border-neutral-800 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                            </a>
+                        </div>
                     </div>
-
                 </div>
 
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- ABOUT -->
-<!-- ========================================================= -->
-
-<section id="about" class="py-24 border-t border-slate-900">
-
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-
-        <div class="grid lg:grid-cols-12 gap-14">
-
-            <div class="lg:col-span-4">
-
-                <p class="mono-font text-xs text-emerald-400 mb-3">
-                    01 / ABOUT
-                </p>
-
-                <h2 class="text-3xl font-bold text-white">
-                    Building with purpose.
-                </h2>
-
-            </div>
-
-
-            <div class="lg:col-span-8">
-
-                <p class="text-slate-400 leading-8 mb-6">
-                    I am a software engineering graduate focused on
-                    building full-stack applications and exploring
-                    artificial intelligence. I enjoy turning ideas
-                    into functional systems that are simple to use,
-                    reliable and useful.
-                </p>
-
-                <p class="text-slate-400 leading-8 mb-6">
-                    My learning journey has given me practical
-                    experience with frontend development, backend
-                    development, databases, APIs, version control
-                    and Linux environments.
-                </p>
-
-                <p class="text-slate-400 leading-8">
-                    I am particularly interested in the intersection
-                    of software engineering and AI, where intelligent
-                    systems can be integrated into real applications
-                    to solve practical problems.
-                </p>
-
-
-                <div class="section-line mt-10"></div>
-
-
-                <div class="grid sm:grid-cols-3 gap-5 mt-8">
-
+                <!-- 3. The Wealth Architect -->
+                <div class="project-card bg-dark-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-all" data-category="ai">
                     <div>
-                        <p class="text-2xl font-bold text-white">
-                            Full Stack
-                        </p>
-
-                        <p class="text-xs text-slate-500 mt-1">
-                            Web Development
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-dark-800 text-neutral-300 border border-neutral-700/50">Fintech & RAG</span>
+                            <span class="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded border border-emerald-400/20">
+                                <i data-lucide="globe" class="w-3 h-3"></i> Public Repo
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">The Wealth Architect (FintechAI)</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                            Financial literacy and market insights advisor leveraging LangChain, ChromaDB vector retrieval pipelines, and OpenAI models for context-aware financial advice.
                         </p>
                     </div>
-
-
                     <div>
-                        <p class="text-2xl font-bold text-white">
-                            AI
-                        </p>
-
-                        <p class="text-xs text-slate-500 mt-1">
-                            Intelligent Applications
-                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Python</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">LangChain</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">ChromaDB</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Streamlit</span>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-white bg-dark-800 hover:bg-dark-700 border border-neutral-700 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live App
+                            </a>
+                            <a href="https://github.com/acomlilian2000-star" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-neutral-400 hover:text-white bg-dark-950 hover:bg-dark-900 border border-neutral-800 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                            </a>
+                        </div>
                     </div>
+                </div>
 
-
+                <!-- 4. CareerConsultant -->
+                <div class="project-card bg-dark-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-all" data-category="ai">
                     <div>
-                        <p class="text-2xl font-bold text-white">
-                            IoT
-                        </p>
-
-                        <p class="text-xs text-slate-500 mt-1">
-                            Hardware & Automation
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-dark-800 text-neutral-300 border border-neutral-700/50">AI Application</span>
+                            <span class="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded border border-emerald-400/20">
+                                <i data-lucide="globe" class="w-3 h-3"></i> Public Repo
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">CareerConsultant</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                            Smart career trajectory guidance system providing contextual resume feedback, skill gap analysis, and developer pathway roadmaps.
                         </p>
                     </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- SKILLS -->
-<!-- ========================================================= -->
-
-<section
-    id="skills"
-    class="py-24 bg-slate-900/20 border-y border-slate-900"
->
-
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-
-        <div class="mb-12">
-
-            <p class="mono-font text-xs text-emerald-400 mb-3">
-                02 / SKILLS
-            </p>
-
-            <h2 class="text-3xl font-bold text-white mb-3">
-                Technical toolkit.
-            </h2>
-
-            <p class="text-sm text-slate-500 max-w-2xl">
-                Technologies and tools I use while developing
-                applications and exploring intelligent systems.
-            </p>
-
-        </div>
-
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-
-            <!-- Frontend -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-solid fa-code"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    Frontend
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    HTML5, CSS3, JavaScript, Vue.js, React.js,
-                    Tailwind CSS, Bootstrap and Pug.
-                </p>
-
-            </div>
-
-
-            <!-- Backend -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-solid fa-server"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    Backend
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    Node.js, Express.js, REST APIs, Python,
-                    authentication, sessions and server-side logic.
-                </p>
-
-            </div>
-
-
-            <!-- Database -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-solid fa-database"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    Database
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    MongoDB, Mongoose, database design,
-                    CRUD operations and structured data management.
-                </p>
-
-            </div>
-
-
-            <!-- AI -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    AI & Automation
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    AI applications, OpenRouter, speech-to-text,
-                    text-to-speech and intelligent automation concepts.
-                </p>
-
-            </div>
-
-
-            <!-- IoT -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    IoT & Hardware
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    Arduino, sensors, microcontrollers,
-                    automation circuits and hardware integration.
-                </p>
-
-            </div>
-
-
-            <!-- Git -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-orange-500/10 text-orange-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-brands fa-git-alt"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    Version Control
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    Git, GitHub, repositories, branches,
-                    commits and collaborative development workflows.
-                </p>
-
-            </div>
-
-
-            <!-- Linux -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-slate-700/50 text-slate-300 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-brands fa-linux"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    Linux
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    Ubuntu, terminal workflows, Node.js environments,
-                    services and development setup.
-                </p>
-
-            </div>
-
-
-            <!-- Tools -->
-
-            <div
-                class="skill-card p-6 rounded-xl bg-slate-950/60 border border-slate-800"
-            >
-
-                <div
-                    class="w-10 h-10 rounded-lg bg-yellow-500/10 text-yellow-400 flex items-center justify-center mb-5"
-                >
-                    <i class="fa-solid fa-wrench"></i>
-                </div>
-
-                <h3 class="font-bold text-white mb-3">
-                    Development Tools
-                </h3>
-
-                <p class="text-xs text-slate-500 leading-6">
-                    VS Code, npm, Postman, MongoDB Compass,
-                    browser developer tools and terminal utilities.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- PROJECTS -->
-<!-- ========================================================= -->
-
-<section id="projects" class="py-24">
-
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-
-        <div class="mb-12">
-
-            <p class="mono-font text-xs text-emerald-400 mb-3">
-                03 / PROJECTS
-            </p>
-
-            <h2 class="text-3xl font-bold text-white mb-3">
-                Things I've built.
-            </h2>
-
-            <p class="text-sm text-slate-500 max-w-2xl">
-                Practical software projects developed to solve
-                real problems and demonstrate my technical skills.
-            </p>
-
-        </div>
-
-
-        <div class="space-y-7">
-
-
-            <!-- PROJECT 1 -->
-
-            <article
-                class="project-card rounded-2xl bg-slate-900/40 border border-slate-800 p-7"
-            >
-
-                <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5 mb-5">
-
                     <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">TypeScript</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Next.js</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Node.js</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">LLM API</span>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-white bg-dark-800 hover:bg-dark-700 border border-neutral-700 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/acomlilian2000-star" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-neutral-400 hover:text-white bg-dark-950 hover:bg-dark-900 border border-neutral-800 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                        <span class="mono-font text-[10px] text-emerald-400">
-                            PROJECT 01
-                        </span>
-
-                        <h3 class="text-xl font-bold text-white mt-2">
-                            NYONDO General Hardware Management System
-                        </h3>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            Full-stack business management application
+                <!-- 5. Health Assistant -->
+                <div class="project-card bg-dark-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-all" data-category="ai">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-dark-800 text-neutral-300 border border-neutral-700/50">Healthcare AI</span>
+                            <span class="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded border border-emerald-400/20">
+                                <i data-lucide="globe" class="w-3 h-3"></i> Public Repo
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Health Assistant</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                            Interactive healthcare guidance tool offering preliminary symptom triaging and structured health resource mapping.
                         </p>
-
                     </div>
-
-
-                    <div class="flex flex-wrap gap-2">
-
-                        <span class="tech-tag">
-                            Node.js
-                        </span>
-
-                        <span class="tech-tag">
-                            Express
-                        </span>
-
-                        <span class="tech-tag">
-                            MongoDB
-                        </span>
-
-                        <span class="tech-tag">
-                            Pug
-                        </span>
-
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Python</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">FastAPI</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">TypeScript</span>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-white bg-dark-800 hover:bg-dark-700 border border-neutral-700 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/acomlilian2000-star" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-neutral-400 hover:text-white bg-dark-950 hover:bg-dark-900 border border-neutral-800 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                            </a>
+                        </div>
                     </div>
-
                 </div>
 
-
-                <p class="text-sm text-slate-400 leading-7 mb-6">
-                    A business management system designed for
-                    NYONDO General Hardware LTD to support stock
-                    management, sales, suppliers, customer deposits,
-                    authentication and business reporting.
-                </p>
-
-
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-
-                    <div class="bg-slate-950/70 rounded-xl p-5">
-
-                        <h4 class="text-sm font-bold text-white mb-3">
-                            Key Features
-                        </h4>
-
-                        <ul class="space-y-2 text-xs text-slate-500">
-
-                            <li>
-                                <i class="fa-solid fa-check text-emerald-400 mr-2"></i>
-                                Role-based authentication
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-check text-emerald-400 mr-2"></i>
-                                Stock and inventory management
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-check text-emerald-400 mr-2"></i>
-                                Sales management
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-check text-emerald-400 mr-2"></i>
-                                Supplier and credit tracking
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-check text-emerald-400 mr-2"></i>
-                                Customer deposit management
-                            </li>
-
-                        </ul>
-
+                <!-- 6. Stillopen -->
+                <div class="project-card bg-dark-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-all" data-category="fullstack">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-dark-800 text-neutral-300 border border-neutral-700/50">Web Platform</span>
+                            <span class="flex items-center gap-1.5 text-xs text-amber-400/90 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">
+                                <i data-lucide="lock" class="w-3 h-3"></i> Private Repo
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">StillOpen</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                            Real-time operational status and accessibility tracking platform designed for local businesses and community service networks.
+                        </p>
                     </div>
-
-
-                    <div class="bg-slate-950/70 rounded-xl p-5">
-
-                        <h4 class="text-sm font-bold text-white mb-3">
-                            Technical Focus
-                        </h4>
-
-                        <ul class="space-y-2 text-xs text-slate-500">
-
-                            <li>
-                                <i class="fa-solid fa-code text-teal-400 mr-2"></i>
-                                RESTful backend routes
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-database text-teal-400 mr-2"></i>
-                                MongoDB data persistence
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-lock text-teal-400 mr-2"></i>
-                                Passport authentication
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-chart-line text-teal-400 mr-2"></i>
-                                Business dashboard logic
-                            </li>
-
-                        </ul>
-
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">TypeScript</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">Next.js</span>
+                            <span class="text-xs text-neutral-400 bg-dark-950 px-2.5 py-1 rounded border border-neutral-800">MongoDB</span>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-neutral-800/80">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium text-white bg-dark-800 hover:bg-dark-700 border border-neutral-700 px-3.5 py-2 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Website
+                            </a>
+                        </div>
                     </div>
-
                 </div>
 
+            </div>
+        </section>
 
-                <a
-                    href="https://github.com/acomlilian2000-star/Nyondo-General-Hardware-Ltd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"
-                >
-                    <i class="fa-brands fa-github"></i>
-                    View Repository
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <!-- Experience & Mentorship Section -->
+        <section id="experience" class="space-y-6">
+            <div class="border-b border-neutral-800/80 pb-4">
+                <h2 class="text-2xl font-bold text-white tracking-tight">Experience & Mentorship</h2>
+                <p class="text-sm text-neutral-400 mt-1">Professional background and technical leadership.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-dark-900 border border-neutral-800 rounded-xl p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <h3 class="text-lg font-bold text-white">Peer Tech Mentor</h3>
+                        <span class="text-xs font-medium text-neutral-400 bg-dark-800 px-2.5 py-1 rounded border border-neutral-700/50 w-fit">Refactory Academy</span>
+                    </div>
+                    <p class="text-neutral-400 text-sm leading-relaxed">
+                        Guided student developer teams through software project sprints, agile workflow execution, code reviews, and full-stack web development practices.
+                    </p>
+                </div>
+
+                <div class="bg-dark-900 border border-neutral-800 rounded-xl p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <h3 class="text-lg font-bold text-white">Full-Stack & Embedded Systems Engineer</h3>
+                        <span class="text-xs font-medium text-neutral-400 bg-dark-800 px-2.5 py-1 rounded border border-neutral-700/50 w-fit">Kampala, Uganda</span>
+                    </div>
+                    <p class="text-neutral-400 text-sm leading-relaxed">
+                        Developing enterprise software applications, agentic AI systems, and hardware prototyping integrations (microcontrollers, sensors, and IoT pipelines).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-dark-900 border border-neutral-800 rounded-2xl p-8 md:p-12 text-center space-y-6">
+            <h2 class="text-3xl font-bold text-white tracking-tight">Let's build something extraordinary together.</h2>
+            <p class="text-neutral-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                Whether you want to discuss full-stack engineering roles, agentic AI integrations, or collaborative technical projects, my inbox is always open.
+            </p>
+            <div class="flex justify-center items-center gap-4 pt-2">
+                <a href="mailto:acomlilian2000@gmail.com" class="flex items-center gap-2 text-sm font-medium bg-white text-neutral-950 px-6 py-3 rounded-xl hover:bg-neutral-200 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i> acomlilian2000@gmail.com
                 </a>
-
-            </article>
-
-
-            <!-- PROJECT 2 -->
-
-            <article
-                class="project-card rounded-2xl bg-slate-900/40 border border-slate-800 p-7"
-            >
-
-                <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5 mb-5">
-
-                    <div>
-
-                        <span class="mono-font text-[10px] text-cyan-400">
-                            PROJECT 02
-                        </span>
-
-                        <h3 class="text-xl font-bold text-white mt-2">
-                            Aguti AI
-                        </h3>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            AI-powered application concept
-                        </p>
-
-                    </div>
-
-
-                    <div class="flex flex-wrap gap-2">
-
-                        <span class="tech-tag">
-                            AI
-                        </span>
-
-                        <span class="tech-tag">
-                            Python
-                        </span>
-
-                        <span class="tech-tag">
-                            APIs
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <p class="text-sm text-slate-400 leading-7 mb-6">
-                    An AI application concept focused on using
-                    artificial intelligence to provide practical
-                    assistance and make useful information more
-                    accessible.
-                </p>
-
-
-                <div class="grid md:grid-cols-3 gap-4">
-
-                    <div class="bg-slate-950/70 rounded-xl p-5">
-                        <i class="fa-solid fa-brain text-cyan-400 mb-3"></i>
-
-                        <h4 class="text-sm font-bold text-white mb-2">
-                            AI Reasoning
-                        </h4>
-
-                        <p class="text-xs text-slate-500 leading-6">
-                            Exploring intelligent responses and
-                            application-level AI workflows.
-                        </p>
-                    </div>
-
-
-                    <div class="bg-slate-950/70 rounded-xl p-5">
-                        <i class="fa-solid fa-plug text-cyan-400 mb-3"></i>
-
-                        <h4 class="text-sm font-bold text-white mb-2">
-                            API Integration
-                        </h4>
-
-                        <p class="text-xs text-slate-500 leading-6">
-                            Connecting AI capabilities with
-                            usable software interfaces.
-                        </p>
-                    </div>
-
-
-                    <div class="bg-slate-950/70 rounded-xl p-5">
-                        <i class="fa-solid fa-lightbulb text-cyan-400 mb-3"></i>
-
-                        <h4 class="text-sm font-bold text-white mb-2">
-                            Problem Solving
-                        </h4>
-
-                        <p class="text-xs text-slate-500 leading-6">
-                            Exploring technology that addresses
-                            practical community needs.
-                        </p>
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PROJECT 3 -->
-
-            <article
-                class="project-card rounded-2xl bg-slate-900/40 border border-slate-800 p-7"
-            >
-
-                <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5 mb-5">
-
-                    <div>
-
-                        <span class="mono-font text-[10px] text-purple-400">
-                            PROJECT 03
-                        </span>
-
-                        <h3 class="text-xl font-bold text-white mt-2">
-                            IoT & Hardware Experiments
-                        </h3>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            Embedded systems and automation
-                        </p>
-
-                    </div>
-
-
-                    <div class="flex flex-wrap gap-2">
-
-                        <span class="tech-tag">
-                            Arduino
-                        </span>
-
-                        <span class="tech-tag">
-                            C/C++
-                        </span>
-
-                        <span class="tech-tag">
-                            Sensors
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <p class="text-sm text-slate-400 leading-7">
-                    Practical experimentation with Arduino,
-                    sensors and hardware components, including
-                    automation and environmental monitoring
-                    concepts.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- EDUCATION & CAREER -->
-<!-- ========================================================= -->
-
-<section
-    id="education"
-    class="py-24 bg-slate-900/20 border-y border-slate-900"
->
-
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-
-        <div class="grid lg:grid-cols-2 gap-12">
-
-
-            <!-- EDUCATION -->
-
-            <div>
-
-                <p class="mono-font text-xs text-emerald-400 mb-3">
-                    04 / EDUCATION
-                </p>
-
-                <h2 class="text-3xl font-bold text-white mb-8">
-                    Learning & growth.
-                </h2>
-
-
-                <div
-                    class="border-l border-emerald-500/30 pl-6"
-                >
-
-                    <div class="relative">
-
-                        <span
-                            class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-emerald-400 ring-4 ring-slate-950"
-                        ></span>
-
-                        <p class="mono-font text-[10px] text-emerald-400 mb-2">
-                            SOFTWARE ENGINEERING
-                        </p>
-
-                        <h3 class="text-lg font-bold text-white">
-                            Software Engineering Certificate
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Focused on JavaScript, web development,
-                            backend systems, databases and practical
-                            software engineering.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CAREER -->
-
-            <div>
-
-                <p class="mono-font text-xs text-emerald-400 mb-3">
-                    05 / CAREER FOCUS
-                </p>
-
-                <h2 class="text-3xl font-bold text-white mb-8">
-                    Where I'm heading.
-                </h2>
-
-
-                <div class="space-y-4">
-
-                    <div
-                        class="p-5 rounded-xl bg-slate-950/60 border border-slate-800"
-                    >
-
-                        <div class="flex gap-4">
-
-                            <i class="fa-solid fa-laptop-code text-emerald-400 mt-1"></i>
-
-                            <div>
-
-                                <h3 class="font-bold text-white">
-                                    Full Stack Development
-                                </h3>
-
-                                <p class="text-xs text-slate-500 leading-6 mt-2">
-                                    Building reliable and maintainable
-                                    web applications from frontend
-                                    to backend.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="p-5 rounded-xl bg-slate-950/60 border border-slate-800"
-                    >
-
-                        <div class="flex gap-4">
-
-                            <i class="fa-solid fa-robot text-cyan-400 mt-1"></i>
-
-                            <div>
-
-                                <h3 class="font-bold text-white">
-                                    AI Engineering
-                                </h3>
-
-                                <p class="text-xs text-slate-500 leading-6 mt-2">
-                                    Developing practical AI-powered
-                                    applications and intelligent
-                                    automation.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="p-5 rounded-xl bg-slate-950/60 border border-slate-800"
-                    >
-
-                        <div class="flex gap-4">
-
-                            <i class="fa-solid fa-rocket text-purple-400 mt-1"></i>
-
-                            <div>
-
-                                <h3 class="font-bold text-white">
-                                    Technology Entrepreneurship
-                                </h3>
-
-                                <p class="text-xs text-slate-500 leading-6 mt-2">
-                                    Exploring ways technology can be
-                                    transformed into useful products
-                                    and services.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- CONTACT -->
-<!-- ========================================================= -->
-
-<section id="contact" class="py-24">
-
-    <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center">
-
-        <p class="mono-font text-xs text-emerald-400 mb-3">
-            06 / CONTACT
-        </p>
-
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-5">
-            Let's build something useful.
-        </h2>
-
-        <p class="text-sm text-slate-500 leading-7 max-w-xl mx-auto mb-10">
-            I'm open to junior software engineering opportunities,
-            internships, collaborations, learning opportunities
-            and projects where I can contribute and continue growing.
-        </p>
-
-
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-
-            <a
-                href="mailto:acomlilian2000@gmail.com"
-                class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition"
-            >
-                <i class="fa-solid fa-envelope"></i>
-                acomlilian2000@gmail.com
-            </a>
-
-
-            <!-- Replace with your real LinkedIn URL -->
-
-            <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-slate-700 bg-slate-900 text-slate-200 font-bold text-sm hover:border-emerald-500/50 hover:text-emerald-400 transition"
-            >
-                <i class="fa-brands fa-linkedin"></i>
-                LinkedIn
-            </a>
-
-
-            <a
-                href="https://github.com/acomlilian2000-star"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-slate-700 bg-slate-900 text-slate-200 font-bold text-sm hover:border-emerald-500/50 hover:text-emerald-400 transition"
-            >
-                <i class="fa-brands fa-github"></i>
-                GitHub
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- ========================================================= -->
-<!-- FOOTER -->
-<!-- ========================================================= -->
-
-<footer
-    class="border-t border-slate-900 bg-slate-950"
->
-
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-8">
-
-        <div class="flex flex-col sm:flex-row justify-between items-center gap-5">
-
-            <div>
-
-                <p class="text-sm font-bold text-white">
-                    Acom Lilian
-                </p>
-
-                <p class="text-xs text-slate-600 mt-1">
-                    Full Stack Developer & AI Engineer
-                </p>
-
-            </div>
-
-
-            <div class="flex items-center gap-5">
-
-                <a
-                    href="https://github.com/acomlilian2000-star"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-slate-600 hover:text-white transition"
-                >
-                    <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/acomlilian2000-star" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-medium bg-dark-950 text-white border border-neutral-800 px-6 py-3 rounded-xl hover:bg-dark-800 transition-colors">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub Profile
                 </a>
-
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-slate-600 hover:text-blue-400 transition"
-                >
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-
-
-                <a
-                    href="mailto:acomlilian2000@gmail.com"
-                    class="text-slate-600 hover:text-emerald-400 transition"
-                >
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-
             </div>
+        </section>
 
+    </main>
 
-            <p class="text-[10px] text-slate-700 mono-font">
-                © 2026 Acom Lilian
-            </p>
+    <!-- Footer -->
+    <footer class="border-t border-neutral-800/80 py-8 text-center text-xs text-neutral-500">
+        <p>© 2026 Lilian Acom. Designed with minimal precision.</p>
+    </footer>
 
-        </div>
+    <!-- Initialize Lucide Icons & Filters -->
+    <script>
+        lucide.createIcons();
 
-    </div>
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
 
-</footer>
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-white', 'text-neutral-950', 'font-medium');
+                btn.classList.add('bg-dark-900', 'border', 'border-neutral-800', 'text-neutral-400');
+            });
 
+            event.target.classList.remove('bg-dark-900', 'border', 'border-neutral-800', 'text-neutral-400');
+            event.target.classList.add('bg-white', 'text-neutral-950', 'font-medium');
 
-<!-- ========================================================= -->
-<!-- BACK TO TOP -->
-<!-- ========================================================= -->
-
-<button
-    id="backToTop"
-    class="hidden fixed bottom-6 right-6 w-11 h-11 rounded-full bg-emerald-500 text-slate-950 items-center justify-center shadow-lg hover:bg-emerald-400 transition z-40"
-    aria-label="Back to top"
->
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-
-<!-- ========================================================= -->
-<!-- JAVASCRIPT -->
-<!-- ========================================================= -->
-
-<script>
-
-    // Mobile menu
-
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    menuButton.addEventListener("click", () => {
-
-        mobileMenu.classList.toggle("active");
-
-        const icon = menuButton.querySelector("i");
-
-        if (mobileMenu.classList.contains("active")) {
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
-
-    });
-
-
-    // Close mobile menu after clicking a link
-
-    document.querySelectorAll(".mobile-link").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mobileMenu.classList.remove("active");
-
-            const icon = menuButton.querySelector("i");
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        });
-
-    });
-
-
-    // Back to top button
-
-    const backToTop = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 500) {
-
-            backToTop.classList.remove("hidden");
-            backToTop.classList.add("flex");
-
-        } else {
-
-            backToTop.classList.add("hidden");
-            backToTop.classList.remove("flex");
-
-        }
-
-    });
-
-
-    backToTop.addEventListener("click", () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-</script>
-
-
-<!-- ========================================================= -->
-<!-- SMALL CUSTOM STYLE FOR TECHNOLOGY TAGS -->
-<!-- ========================================================= -->
-
-<style>
-
-    .tech-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.35rem 0.65rem;
-        border-radius: 999px;
-        border: 1px solid rgba(51, 65, 85, 0.8);
-        background: rgba(15, 23, 42, 0.8);
-        color: #94a3b8;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 10px;
-    }
-
-</style>
-
+    </script>
 </body>
 </html>

@@ -39,11 +39,12 @@
     <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-neutral-800/60">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-white tracking-tight flex items-center gap-2">
+            <a href="#home" class="font-bold text-white tracking-tight flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 Lilian Acom
             </a>
             <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
                 <a href="#projects" class="hover:text-white transition-colors">Projects</a>
@@ -68,19 +69,35 @@
     <!-- Main Content Container -->
     <main class="max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-24">
 
-        <!-- Hero / About Section -->
-        <section id="about" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <!-- Home Section Alone -->
+        <section id="home" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2 space-y-6">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900 border border-neutral-800 text-xs text-neutral-400">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-400"></i>
                     Junior Full-Stack & AI Engineer — Kampala, Uganda
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-                    Hi, I'm Lilian Acom — Full-Stack & AI Engineer
+                    Building robust full-stack web platforms & intelligent AI solutions.
                 </h1>
                 <p class="text-neutral-400 text-base md:text-lg leading-relaxed">
-                    Software developer and AI engineering practitioner with hands-on experience building full-stack web applications, database-driven systems, and AI-enabled assistants. Specialized in LLMs, RAG pipelines, LangChain, vector databases, and persistent agent workflows.
+                    I design and deploy responsive web applications, automated business backends, retrieval-augmented generation (RAG) pipelines, and context-aware conversational AI agents.
                 </p>
+                
+                <!-- Quick capabilities grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div class="flex items-center gap-2 text-xs text-neutral-300 bg-dark-900 border border-neutral-800 p-3 rounded-lg">
+                        <i data-lucide="code" class="w-4 h-4 text-emerald-400"></i> Full-Stack Web App Development
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-neutral-300 bg-dark-900 border border-neutral-800 p-3 rounded-lg">
+                        <i data-lucide="bot" class="w-4 h-4 text-emerald-400"></i> Agentic AI & RAG Engineering
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-neutral-300 bg-dark-900 border border-neutral-800 p-3 rounded-lg">
+                        <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i> Database Systems & Persistence
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-neutral-300 bg-dark-900 border border-neutral-800 p-3 rounded-lg">
+                        <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i> Embedded Systems & IoT Prototyping
+                    </div>
+                </div>
             </div>
 
             <!-- Persistent Avatar Uploader Component -->
@@ -102,6 +119,26 @@
                     <p class="font-semibold text-white">Lilian Acom</p>
                     <p class="mt-0.5">Click frame to update avatar</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- About Section Alone -->
+        <section id="about" class="space-y-6 bg-dark-900/50 border border-neutral-800/80 rounded-2xl p-8">
+            <div class="border-b border-neutral-800 pb-4">
+                <h2 class="text-2xl font-bold text-white tracking-tight">About Me</h2>
+                <p class="text-xs text-emerald-400 mt-1">Professional Background & Engineering Philosophy</p>
+            </div>
+            
+            <div class="space-y-4 text-neutral-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    <strong class="text-white">Hi, I'm Lilian Acom — Full-Stack & AI Engineer</strong> based in Kampala, Uganda. I specialize in designing end-to-end software solutions that combine intuitive front-end interfaces with scalable backend architectures and applied artificial intelligence.
+                </p>
+                <p>
+                    My practical experience spans building enterprise management information systems, real-time web platforms, and sophisticated AI applications—including mock interview platforms with voice integration, financial RAG assistants, and persistent long-term memory agents.
+                </p>
+                <p>
+                    Driven by product ownership and structured problem decomposition, I bridge the gap between emerging AI technologies (LLMs, LangChain, vector storage) and practical real-world business needs.
+                </p>
             </div>
         </section>
 
@@ -461,11 +498,28 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- University of the People (In Progress) -->
+                <div class="bg-dark-900 border border-neutral-800 rounded-xl p-6 space-y-2">
+                    <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-semibold">In Progress</span>
+                    <h3 class="text-base font-bold text-white">Bachelor of Science in Computer Science</h3>
+                    <p class="text-xs text-neutral-400">University of the People, USA</p>
+                </div>
+
+                <!-- Turing College (In Progress) -->
                 <div class="bg-dark-900 border border-neutral-800 rounded-xl p-6 space-y-2">
                     <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-semibold">In Progress</span>
                     <h3 class="text-base font-bold text-white">Software & AI Engineering Program</h3>
                     <p class="text-xs text-neutral-400">Turing College, Germany</p>
                 </div>
+
+                <!-- Spiro Academy Uganda -->
+                <div class="bg-dark-900 border border-neutral-800 rounded-xl p-6 space-y-2">
+                    <span class="text-xs text-neutral-400 bg-dark-800 px-2 py-0.5 rounded border border-neutral-700 font-semibold">Completed</span>
+                    <h3 class="text-base font-bold text-white">IoT & Embedded Systems Engineering</h3>
+                    <p class="text-xs text-neutral-400">SPIRO Academy Uganda</p>
+                </div>
+
+                <!-- Refactory Academy -->
                 <div class="bg-dark-900 border border-neutral-800 rounded-xl p-6 space-y-2">
                     <span class="text-xs text-neutral-400 bg-dark-800 px-2 py-0.5 rounded border border-neutral-700 font-semibold">Completed</span>
                     <h3 class="text-base font-bold text-white">Software Engineering (JavaScript Track)</h3>
@@ -498,7 +552,7 @@
                     </div>
                     <div>
                         <h3 class="text-base font-bold text-white">IoT & Embedded Systems Certificate</h3>
-                        <p class="text-xs text-neutral-400 mt-1">Spiro Academy Uganda</p>
+                        <p class="text-xs text-neutral-400 mt-1">SPIRO Academy Uganda</p>
                     </div>
                 </div>
             </div>
@@ -519,9 +573,6 @@
                 </a>
                 <a href="https://linkedin.com/in/lilian-acom-50038a347" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-medium bg-dark-950 text-white border border-neutral-800 px-6 py-3 rounded-xl hover:bg-dark-800 transition-colors">
                     <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn Profile
-                </a>
-                <a href="./Lilian_Acom_CV.pdf" download="Lilian_Acom_CV.pdf" class="flex items-center gap-2 text-sm font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-6 py-3 rounded-xl hover:bg-emerald-500/20 transition-colors">
-                    <i data-lucide="download" class="w-4 h-4"></i> Download CV (PDF)
                 </a>
             </div>
         </section>
